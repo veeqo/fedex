@@ -34,7 +34,7 @@ module Fedex
                           rescue StandardError
                             $1
                           end
-          raise RateError, error_message
+          raise RateError.new(error_message, @response_xml, @request_xml)
         end
       end
 
